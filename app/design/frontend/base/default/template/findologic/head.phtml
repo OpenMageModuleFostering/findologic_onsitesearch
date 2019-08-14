@@ -1,0 +1,25 @@
+<?php
+/**
+ * @category    FINDOLOGIC
+ * @package     Findologic_Search
+ * @copyright   Copyright (c) 2015 FINDOLOGIC (http://www.findologic.com)
+ */
+?>
+<?php
+    /** @var Findologic_Search_Helper_TrackingScripts $tracking */
+    $tracking = Mage::helper('findologic/trackingScripts');
+    echo $tracking->renderScripts($this->getRequest());
+?>
+<script type="text/javascript">
+
+   var  fl_getIds = function (ids){
+        jQuery.ajax({
+            url: "<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>findologic/test?mode=grid&ids="+ids
+        }).done(function(data) {
+            var productHTML = jQuery(data);
+            console.log(productHTML);
+            jQuery('.product-grid-container').replaceWith(jQuery(productHTML[2]).find('.product-grid-container'));
+        });
+    }
+
+</script>

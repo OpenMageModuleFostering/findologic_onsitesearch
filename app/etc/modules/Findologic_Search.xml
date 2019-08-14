@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <modules>
+        <Findologic_Search>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Findologic_Search>
+    </modules>
+</config>

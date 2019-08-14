@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <tabs>
+        <findologic translate="label">
+            <label>Findologic</label>
+            <sort_order>100</sort_order>
+        </findologic>
+    </tabs>
+    <sections>
+        <findologic translate="label">
+            <label>Configuration</label>
+            <tab>findologic</tab>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            
+            <groups>
+                <findologic_group translate="label">
+                    <label>Shop key options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+ 
+                    <fields>
+                        <label translate="label">
+                            <label>Use store view to insert shop key</label>
+                            <frontend_type>label</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </label>
+                        <shopkey translate="label">
+                            <label>Shop Key</label>
+                            <frontend_type>text</frontend_type>
+                            <backend_model>findologic/shopkeyValidation</backend_model>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Insert shop key</comment>
+                        </shopkey>
+                    </fields>
+                </findologic_group>
+            </groups>
+        </findologic>
+    </sections>
+</config>

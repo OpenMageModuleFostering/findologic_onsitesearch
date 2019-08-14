@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<package>
+    <name>FINDOLOGIC_OnSiteSearch</name>
+    <version>1.0.10</version>
+    <stability>stable</stability>
+    <license uri="https://opensource.org/licenses/MIT">MIT</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>FINDOLOGIC is the ultimate search solution for your online store!</summary>
+    <description>FINDOLOGIC increases sales with a better search function in online store.</description>
+    <notes>Findologic Search module</notes>
+    <authors>
+        <author>
+            <name>FINDOLOGIC</name>
+            <user>FINDOLOGIC</user>
+            <email>support@findologic.com</email>
+        </author>
+    </authors>
+    <contents>
+        <target name="magecommunity">
+            <dir name="FINDOLOGIC">
+                <dir name="OnSiteSearch">
+                    <dir name="Helper">
+                        <file name="TrackingScripts.php" hash="6afc96537e13bf75c70879858f727cc6"/>
+                        <file name="Xml.php" hash="96e3c3c592aac7c4577a19ec66bb6662"/>
+                        <file name="XmlBasic.php" hash="3d0e0cd8e7acc6ea3daefb8a8023c80d"/>
+                    </dir>
+                    <dir name="Model">
+                        <file name="Observer.php" hash="cf44ebef50dddd2f4f3a0cc27e55e2d5"/>
+                        <file name="ShopkeyValidation.php" hash="fc06209c20b5443bfe933d687badb66b"/>
+                    </dir>
+                    <dir name="controllers">
+                        <file name="ExportController.php" hash="87223d81f2818a3f6fc88274c153812d"/>
+                    </dir>
+                    <dir name="etc">
+                        <file name="adminhtml.xml" hash="1b74a14bd7b6bb504734edbe6322e263"/>
+                        <file name="config.xml" hash="1fc1e2e317685f0813d595d55860d551"/>
+                        <file name="system.xml" hash="99c331d898e21037e0b9b3f352a308c1"/>
+                    </dir>
+                </dir>
+            </dir>
+        </target>
+        <target name="mageetc">
+            <dir name="modules">
+                <file name="FINDOLOGIC_OnSiteSearch.xml" hash="b3bdfd207ec2bc248629769b095d6745"/>
+            </dir>
+        </target>
+        <target name="magedesign">
+            <dir name="frontend">
+                <dir name="base">
+                    <dir name="default">
+                        <dir name="template">
+                            <dir name="findologic">
+                                <file name="head.phtml" hash="fe8b7f3f846099ca86ce94d567875200"/>
+                            </dir>
+                        </dir>
+                        <dir name="layout">
+                            <file name="findologic_onsitesearch.xml" hash="5e6be64e166f6e1fdc62b1be27011249"/>
+                        </dir>
+                    </dir>
+                </dir>
+            </dir>
+        </target>
+    </contents>
+    <compatible/>
+    <dependencies>
+        <required>
+            <php>
+                <min>5.3.0</min>
+                <max>6.0.0</max>
+            </php>
+        </required>
+    </dependencies>
+</package>
