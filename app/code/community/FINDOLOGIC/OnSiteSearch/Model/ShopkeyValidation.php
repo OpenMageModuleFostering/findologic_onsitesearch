@@ -20,13 +20,35 @@
  * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- *
- * @category    FINDOLOGIC
- * @package     FINDOLOGIC_OnSiteSearch
  */
-?>
-<?php
-    /** @var FINDOLOGIC_OnSiteSearch_Helper_TrackingScripts $tracking */
-    $tracking = Mage::helper('findologic/trackingScripts');
-    echo $tracking->renderScripts($this->getRequest());
-?>
+class FINDOLOGIC_OnSiteSearch_Model_ShopkeyValidation extends Mage_Core_Model_Config_Data
+{
+    /**
+     * Saves object data.
+     *
+     * @return FINDOLOGIC_OnSiteSearch_Model_ShopkeyValidation
+     */
+    public function save()
+    {
+        $shopKey = trim($this->getValue());
+        if ($shopKey) {
+            $code = Mage::getSingleton('adminhtml/config_data')->getStore();
+            $currentId = Mage::getModel('core/store')->load($code)->getId();
+
+            $stores = Mage::app()->getStores();
+
+            foreach ($stores as $store) {
+                $storeId = $store->getId();
+                $keyValue = Mage::getStoreConfig('findologic/findologic_group/shopkey', $storeId);
+
+                if ($keyValue === $shopKey && $currentId !== $storeId) {
+                    Mage::throwException('Shop key already exists! Each store view must have its own shop key.');
+                }
+            }
+
+            $this->setValue(trim($shopKey));
+        }
+
+        return parent::save();
+    }
+}

@@ -20,13 +20,17 @@
  * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- *
- * @category    FINDOLOGIC
- * @package     FINDOLOGIC_OnSiteSearch
  */
-?>
-<?php
-    /** @var FINDOLOGIC_OnSiteSearch_Helper_TrackingScripts $tracking */
-    $tracking = Mage::helper('findologic/trackingScripts');
-    echo $tracking->renderScripts($this->getRequest());
-?>
+class FINDOLOGIC_OnSiteSearch_Model_Observer {
+    
+    public function onAfterGetSearchResult(Varien_Event_Observer $eventData)
+    {
+        // need to get proper number of items if possible
+    }
+
+    public function onCheckoutOnepageControllerSuccess(Varien_Event_Observer $event)
+    {
+        $data = $event->getData();
+        Mage::helper('findologic/trackingScripts')->setLastOrderId(reset($data['order_ids']));
+    }
+}

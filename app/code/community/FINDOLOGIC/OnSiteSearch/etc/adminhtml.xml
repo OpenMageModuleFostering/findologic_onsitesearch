@@ -1,5 +1,5 @@
-<?php
-/**
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
  * The MIT License (MIT)
  *
  * Copyright (c) 2016 FINDOLOGIC
@@ -20,13 +20,26 @@
  * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
  * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- *
- * @category    FINDOLOGIC
- * @package     FINDOLOGIC_OnSiteSearch
- */
-?>
-<?php
-    /** @var FINDOLOGIC_OnSiteSearch_Helper_TrackingScripts $tracking */
-    $tracking = Mage::helper('findologic/trackingScripts');
-    echo $tracking->renderScripts($this->getRequest());
-?>
+ -->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <findologic translate="title">
+                                        <title>FINDOLOGIC OnSiteSearch</title>
+                                        <sort_order>1000</sort_order>
+                                    </findologic>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

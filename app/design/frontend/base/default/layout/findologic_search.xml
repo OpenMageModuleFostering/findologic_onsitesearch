@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<layout version="1.0.0">
-    <default>
-        <reference name="head">
-            <block type="core/template" name="findologic.search" template="findologic/head.phtml"/>
-        </reference>
-    </default>
-</layout>
