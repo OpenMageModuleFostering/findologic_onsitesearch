@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/FINDOLOGIC_OnSiteSearch",
+    "name": "OpenMageModuleFostering\/FINDOLOGIC_OnSiteSearch",
     "type": "magento-module",
     "license": "MIT",
     "homepage": "",
     "description": "FINDOLOGIC is the ultimate search solution for your online store!",
     "authors": [
-    {
-        "name": "FINDOLOGIC",
-        "email": "support@findologic.com"
-    }
-],
+        {
+            "name": "FINDOLOGIC",
+            "email": "support@findologic.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
